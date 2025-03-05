@@ -22,16 +22,20 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    #integrates node.js
-    - name: Install node.js
+    # Integrates node.js
+    - name: Install Node.js
       uses: actions/setup-node@v4
       with: 
         node-version: '22'
 
-      #install Newman
+      # Install Newman
       - name: Install Newman
       - run: npm Install Newman -g
     
       #  Rum Neman test
         - name: Running first collection
           run: newman run AE_API_Test.postman_collection.json
+
+      # Run Newman Test #2
+      - name: Running ccollection with environment
+        run: newman run  AE_API_Test.postman_collection.json -e ev.postman_environment.json
