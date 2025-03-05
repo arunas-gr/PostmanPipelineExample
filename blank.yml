@@ -30,4 +30,5 @@ jobs:
 
       #install Newman
       - name: Install Newman
+      - run: npm Install Newman -g
     
