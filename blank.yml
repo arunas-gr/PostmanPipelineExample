@@ -32,3 +32,6 @@ jobs:
       - name: Install Newman
       - run: npm Install Newman -g
     
+      #  Rum Neman test
+        - name: Running first collection
+          run: newman run AE_API_Test.postman_collection.json
